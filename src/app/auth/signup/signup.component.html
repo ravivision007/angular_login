@@ -1,0 +1,70 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <h2>Signup</h2>
+  
+    <div>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email">
+      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+        <small *ngIf="email?.errors?.['required']">Email is required.</small>
+        <small *ngIf="email?.errors?.['email']">Enter a valid email.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password">
+      <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+        <small *ngIf="password?.errors?.['required']">Password is required.</small>
+        <small *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="firstName">First Name</label>
+      <input id="firstName" formControlName="firstName" type="text">
+      <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
+        <small *ngIf="firstName?.errors?.['required']">First name is required.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="lastName">Last Name</label>
+      <input id="lastName" formControlName="lastName" type="text">
+      <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+        <small *ngIf="lastName?.errors?.['required']">Last name is required.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="dob">DOB</label>
+      <input id="dob" formControlName="dob" type="date">
+      <div *ngIf="dob?.invalid && (dob?.dirty || dob?.touched)">
+        <small *ngIf="dob?.errors?.['required']">Date of birth is required.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="address">Address</label>
+      <input id="address" formControlName="address" type="text">
+      <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+        <small *ngIf="address?.errors?.['required']">Address is required.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="phoneNumber">Phone Number</label>
+      <input id="phoneNumber" formControlName="phoneNumber" type="text">
+      <div *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)">
+        <small *ngIf="phoneNumber?.errors?.['required']">Phone number is required.</small>
+        <small *ngIf="phoneNumber?.errors?.['pattern']">Phone number must contain only digits.</small>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="signupForm.invalid">Signup</button>
+
+    <div class="forgot-password">
+      <a [routerLink]=" '/forgot-password' "></a>
+      <a [routerLink]=" '/login' ">Login?</a>
+  </div>
+  </form>
+  
