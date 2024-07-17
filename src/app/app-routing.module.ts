@@ -7,7 +7,7 @@ import { HomeComponent } from './dashboard/home/home.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'forgot-password', component:ForgotPasswordComponent},
   // {
